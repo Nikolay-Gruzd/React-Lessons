@@ -1,18 +1,27 @@
 type AccordionType = {
     title: string
+    collapsed: boolean
 }
 
 export function Accordion(props: AccordionType) { // Компонент Accordion
     console.log('Accordion rendering')
     return (
-        <div>
-            <AccordionTitle title={props.title}/>
-            <AccordionBody/>
-        </div>
+        props.collapsed ?
+            <div>
+                <AccordionTitle title={props.title}/>
+            </div>
+            :<div>
+                <AccordionTitle title={props.title}/>
+                <AccordionBody/>
+            </div>
     )
 }
 
-function AccordionTitle(props: AccordionType) { // Компонент AccordionTitle
+type AccordionTitleType = {
+    title: string
+}
+
+function AccordionTitle(props: AccordionTitleType) { // Компонент AccordionTitle
     console.log('AccordionTitle rendering')
     return (
         <h3>{props.title}</h3>

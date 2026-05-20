@@ -1,9 +1,5 @@
 type RatingType = {
-    value: number;
-}
-
-type StarType = {
-    selected: boolean
+    value: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
 export function Rating(props: RatingType) { // Компонент Rating
@@ -64,6 +60,10 @@ export function Rating(props: RatingType) { // Компонент Rating
             <Star selected={false}/>
         </div>
     )
+}
+
+type StarType = {
+    selected: boolean
 }
 
 function Star(props: StarType) { // Компонент Star
