@@ -1,0 +1,25 @@
+.App{
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.onOff {
+    padding: 10px;
+    span{
+        padding: 5px 15px;
+        margin: 0 5px;
+        border: black solid 1px;
+        &:last-child {
+            border-radius: 100%;
+        }
+    }
+}
+
+.bgColorGreen{
+    background-color: green;
+}
+
+.bgColorRed{
+    background-color: red;
+}

@@ -6,14 +6,10 @@ type AccordionType = {
 export function Accordion(props: AccordionType) { // Компонент Accordion
     console.log('Accordion rendering')
     return (
-        props.collapsed ?
-            <div>
-                <AccordionTitle title={props.title}/>
-            </div>
-            :<div>
-                <AccordionTitle title={props.title}/>
-                <AccordionBody/>
-            </div>
+        <div>
+            <AccordionTitle title={props.title}/>
+            { !props.collapsed && <AccordionBody/> }
+        </div>
     )
 }
 
