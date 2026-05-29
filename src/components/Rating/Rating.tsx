@@ -2,8 +2,8 @@ type RatingType = {
     value: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
-export function Rating(props: RatingType) { // Компонент Rating
-    console.log('Rating rendering')
+export function Rating(props: RatingType) { // Компонент UnControlledRating
+    console.log('UnControlledRating rendering')
 
     return (
         <div>
