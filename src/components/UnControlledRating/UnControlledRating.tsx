@@ -30,8 +30,6 @@ type StarType = {
 
 function Star(props: StarType) { // Компонент Star
     console.log('Star rendering')
-    if (props.selected) {
-        return <span><b>star </b></span>
-    }
-    return <span>star </span>
+
+    return props.selected ? <span><b>star </b></span> : <span>star </span>
 }
