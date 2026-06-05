@@ -1,12 +1,10 @@
+import {useState} from "react";
 
-type OnOffType = {
-    switchOn: boolean
-    setSwitchOn: (value: boolean) => void
-}
-
-export const OnOff = (props: OnOffType) => {
+export const UncontrolledOnOff = () => {
 
     console.log('onOff rendering')
+
+    let [on, setOn] = useState(false)
 
     const onOffStyle = {
         display: 'flex',
@@ -17,7 +15,7 @@ export const OnOff = (props: OnOffType) => {
         height: '20px',
         border: '1px solid black',
         padding: '2px',
-        backgroundColor: props.switchOn ? 'green' : '',
+        backgroundColor: on ? 'green' : '',
     }
     const offStyle = {
         width: '30px',
@@ -25,7 +23,7 @@ export const OnOff = (props: OnOffType) => {
         border: '1px solid black',
         margin: '0 10px',
         padding: '2px',
-        backgroundColor: props.switchOn ? '' : 'red',
+        backgroundColor: on ? '' : 'red',
     }
 
     const indicatorStyle = {
@@ -33,15 +31,15 @@ export const OnOff = (props: OnOffType) => {
         height: '20px',
         borderRadius: '10px',
         border: '1px solid black',
-        backgroundColor: props.switchOn ? 'green' : 'red',
+        backgroundColor: on ? 'green' : 'red',
     }
 
     const onClickOnHandler = () => {
-        props.setSwitchOn(true)
+        setOn(true)
     }
 
     const onClickOffHandler = () => {
-        props.setSwitchOn(false)
+        setOn(false)
     }
 
     return (
