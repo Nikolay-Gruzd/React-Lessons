@@ -1,7 +1,7 @@
-import { fn } from "storybook/test";
+import { fn } from "@storybook/test";
 import {Rating, RatingValueType} from "./Rating.tsx";
 import {useState} from "react";
-import type {StoryObj} from "@storybook/react-vite";
+import type {StoryObj} from "@storybook/react";
 
 export default {
     title: 'Rating',

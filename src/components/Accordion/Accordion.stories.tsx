@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { fn } from "storybook/test";
-
+import type { Meta, StoryObj } from '@storybook/react'
+import { fn } from "@storybook/test";
 import {Accordion} from "./Accordion.tsx";
 import {useState} from "react";
 
@@ -11,23 +10,30 @@ export default meta
 
 type Story = StoryObj<typeof Accordion>
 
-export const FirstStory: Story = {
+export const CollapsedAccordion: Story = {
     args: {
-        title: 'FirstStory',
+        title: 'CollapsedAccordion',
         collapsed: true,
         setAccordionCollapsed: fn()
     }
 }
-
-const setAccordionCollapsedCallback = fn()
-
-export const CollapsedAccordion = () => {
-    return <Accordion title={'Collapsed Accordion'} collapsed={true} setAccordionCollapsed={setAccordionCollapsedCallback} />
+export const OpenedAccordion: Story = {
+    args: {
+        title: 'OpenedAccordion',
+        collapsed: false,
+        setAccordionCollapsed: fn()
+    }
 }
 
-export const OpenedAccordion = () => {
-    return <Accordion title={'Opened Accordion'} collapsed={false} setAccordionCollapsed={setAccordionCollapsedCallback} />
-}
+// const setAccordionCollapsedCallback = action("Accordion mode changed")
+//
+// export const CollapsedAccordion = () => {
+//     return <Accordion title={'Collapsed Accordion'} collapsed={true} setAccordionCollapsed={setAccordionCollapsedCallback} />
+// }
+//
+// export const OpenedAccordion = () => {
+//     return <Accordion title={'Opened Accordion'} collapsed={false} setAccordionCollapsed={setAccordionCollapsedCallback} />
+// }
 
 export const WorkingAccordion = () => {
     const [collapsed, setCollapsed] = useState<boolean>(false)

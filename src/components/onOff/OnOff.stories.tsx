@@ -1,7 +1,7 @@
-import { fn } from "storybook/test";
+import { fn } from "@storybook/test";
 import {useState} from "react";
 import {OnOff} from "./OnOff.tsx";
-import type {StoryObj} from "@storybook/react-vite";
+import type {StoryObj} from "@storybook/react";
 
 export default {
     title: 'OnOff',
