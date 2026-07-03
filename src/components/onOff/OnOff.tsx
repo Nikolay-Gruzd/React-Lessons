@@ -1,5 +1,5 @@
 
-type OnOffType = {
+export type OnOffType = {
     switchOn: boolean
     setSwitchOn: (value: boolean) => void
 }
