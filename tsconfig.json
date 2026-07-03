@@ -1,4 +1,32 @@
 {
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Измените эти настройки */
+    "moduleResolution": "node16",  // ← или "node16", "nodenext", "bundler"
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Добавьте для Storybook */
+    "types": ["node", "vite/client", "vitest/globals"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleDetection": "force",
+
+    /* Остальные настройки */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", ".storybook/**/*", "vite.config.ts"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
