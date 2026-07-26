@@ -32,6 +32,7 @@ export function Select(props: SelectType) { // Компонент ControlledSele
     }
     const onKeyUp = (e: KeyboardEvent<HTMLSpanElement>) => {
         console.log('press')
+        console.log('press1')
     }
 
     return (
