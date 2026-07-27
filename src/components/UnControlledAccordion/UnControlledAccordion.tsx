@@ -1,14 +1,17 @@
-import {useState} from "react";
+import {useReducer} from "react";
+import {reducer, TOGGLE_COLLAPSED} from "./reducer.tsx";
 
 export function UnControlledAccordion() { // Компонент UnControlledAccordion
     console.log('UnControlledAccordion rendering')
 
-    let [ collapsed, setCollapsed ] = useState(false)
+    // let [ collapsed, setCollapsed ] = useState(true)
+    let [ state, dispatch ] = useReducer(reducer, { collapsed: true })
 
     return (
         <div>
-            <AccordionTitle title={'Меню'} onClick={() => setCollapsed(!collapsed)}/>
-            { collapsed && <AccordionBody/> }
+            {/*<AccordionTitle title={'Меню'} onClick={() => setCollapsed(!collapsed)}/>*/}
+            <AccordionTitle title={'Меню'} onClick={() => dispatch({type:TOGGLE_COLLAPSED})}/>
+            { !state.collapsed && <AccordionBody/> }
         </div>
     )
 }
