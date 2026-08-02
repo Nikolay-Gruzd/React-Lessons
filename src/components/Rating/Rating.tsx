@@ -1,3 +1,5 @@
+import {memo} from "react";
+
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
 type RatingType = {
@@ -5,7 +7,7 @@ type RatingType = {
     setRatingValue: (value: RatingValueType) => void
 }
 
-export function Rating(props: RatingType) { // Компонент UnControlledRating
+function RatingMemo(props: RatingType) { // Компонент UnControlledRating
     console.log('UnControlledRating rendering')
 
     return (
@@ -18,6 +20,7 @@ export function Rating(props: RatingType) { // Компонент UnControlledRa
         </div>
     )
 }
+export const Rating = memo(RatingMemo)
 
 type StarType = {
     selected: boolean
@@ -25,10 +28,11 @@ type StarType = {
     setRatingValue: (value: RatingValueType) => void
 }
 
-function Star(props: StarType) { // Компонент Star
+function StarMemo(props: StarType) { // Компонент Star
     console.log('Star rendering')
 
     return <span onClick={() => props.setRatingValue(props.value)}>
         { props.selected ? <b>star </b> : 'star '}
     </span>
 }
+const Star = memo(StarMemo)

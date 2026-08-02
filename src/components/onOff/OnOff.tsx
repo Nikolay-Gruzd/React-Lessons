@@ -1,10 +1,11 @@
+import {memo} from "react";
 
 export type OnOffType = {
     switchOn: boolean
     setSwitchOn: (value: boolean) => void
 }
 
-export const OnOff = (props: OnOffType) => {
+const OnOffMemo = (props: OnOffType) => {
 
     console.log('onOff rendering')
 
@@ -52,3 +53,4 @@ export const OnOff = (props: OnOffType) => {
         </div>
     )
 }
+export const OnOff = memo(OnOffMemo)

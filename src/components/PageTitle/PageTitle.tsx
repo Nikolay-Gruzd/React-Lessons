@@ -1,8 +1,10 @@
+import {memo} from "react";
+
 type PageTitleType = {
     title: string
 }
 
-export function PageTitle(props: PageTitleType) {
+function PageTitleMemo(props: PageTitleType) {
     console.log('App Title rendering');
     return(
         <h1>
@@ -10,3 +12,4 @@ export function PageTitle(props: PageTitleType) {
         </h1>
     )
 }
+export const PageTitle = memo(PageTitleMemo)

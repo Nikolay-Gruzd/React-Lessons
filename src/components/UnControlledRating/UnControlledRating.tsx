@@ -2,9 +2,9 @@
 //     value: 0 | 1 | 2 | 3 | 4 | 5;
 // }
 
-import {useState} from "react";
+import {memo, useState} from "react";
 
-export function UnControlledRating() { // Компонент UnControlledRating
+function UncontrolledOnOffMemo() { // Компонент UnControlledRating
     console.log('UnControlledRating rendering')
 
     let [value, setValue] = useState(0)
@@ -19,6 +19,7 @@ export function UnControlledRating() { // Компонент UnControlledRating
         </div>
     )
 }
+export const UnControlledRating = memo(UncontrolledOnOffMemo)
 
 type StarType = {
     selected: boolean
@@ -26,10 +27,11 @@ type StarType = {
     setValue: (value: 1 | 2 | 3 | 4 | 5) => void
 }
 
-function Star(props: StarType) { // Компонент Star
+function StarMemo(props: StarType) { // Компонент Star
     console.log('Star rendering')
 
     return <span onClick={() => props.setValue(props.value)}>
         {props.selected ? <b>star </b> : 'star '}
     </span>
 }
+const Star = memo(StarMemo)

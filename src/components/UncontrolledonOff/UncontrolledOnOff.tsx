@@ -1,6 +1,6 @@
-import {useState} from "react";
+import {memo, useState} from "react";
 
-export const UncontrolledOnOff = () => {
+const UncontrolledOnOffMemo = () => {
 
     console.log('onOff rendering')
 
@@ -50,3 +50,4 @@ export const UncontrolledOnOff = () => {
         </div>
     )
 }
+export const UncontrolledOnOff = memo(UncontrolledOnOffMemo)

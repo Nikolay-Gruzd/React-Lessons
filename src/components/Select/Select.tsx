@@ -1,5 +1,5 @@
 import s from './Select.module.css'
-import {useState, KeyboardEvent, useEffect} from "react";
+import {useState, KeyboardEvent, useEffect, memo} from "react";
 
 type ItemType = {
     title: string
@@ -11,7 +11,7 @@ type SelectType = {
     items: Array<ItemType>
 }
 
-export function Select(props: SelectType) { // Компонент ControlledSelect
+function SelectMemo(props: SelectType) { // Компонент ControlledSelect
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
@@ -85,3 +85,4 @@ export function Select(props: SelectType) { // Компонент ControlledSele
         </>
     )
 }
+export const Select = memo(SelectMemo)

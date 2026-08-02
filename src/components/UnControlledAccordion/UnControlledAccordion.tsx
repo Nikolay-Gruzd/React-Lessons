@@ -1,7 +1,7 @@
-import {useReducer} from "react";
+import {memo, useReducer} from "react";
 import {reducer, TOGGLE_COLLAPSED} from "./reducer.tsx";
 
-export function UnControlledAccordion() { // Компонент UnControlledAccordion
+function UnControlledAccordionMemo() { // Компонент UnControlledAccordion
     console.log('UnControlledAccordion rendering')
 
     // let [ collapsed, setCollapsed ] = useState(true)
@@ -15,20 +15,22 @@ export function UnControlledAccordion() { // Компонент UnControlledAcco
         </div>
     )
 }
+export const UnControlledAccordion = memo(UnControlledAccordionMemo)
 
 type AccordionTitleType = {
     title: string
     onClick: () => void
 }
 
-function AccordionTitle(props: AccordionTitleType) { // Компонент AccordionTitle
+function AccordionTitleMemo(props: AccordionTitleType) { // Компонент AccordionTitle
     console.log('AccordionTitle rendering')
     return (
         <h3 onClick={props.onClick}>{props.title}</h3>
     )
 }
+const AccordionTitle = memo(AccordionTitleMemo)
 
-function AccordionBody() { // Компонент AccordionBody
+function AccordionBodyMemo() { // Компонент AccordionBody
     console.log('AccordionBody rendering')
     return (
         <ul>
@@ -38,3 +40,4 @@ function AccordionBody() { // Компонент AccordionBody
         </ul>
     )
 }
+const AccordionBody = memo(AccordionBodyMemo)
