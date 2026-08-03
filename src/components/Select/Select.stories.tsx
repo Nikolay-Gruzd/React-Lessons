@@ -13,9 +13,9 @@ export const WithValue = () => {
             value={value}
             onChange={setValue}
             items={[
-                {value: '1', title: 'Minsk'},
-                {value: '2', title: 'Moscow'},
-                {value: '3', title: 'Kiev'}
+                {value: '1', title: 'Minsk', country: '', people: 0},
+                {value: '2', title: 'Moscow', country: '', people: 0},
+                {value: '3', title: 'Kiev',country: '', people: 0}
             ]}
         />
     </>
@@ -28,9 +28,9 @@ export const WithoutValue = () => {
             value={value}
             onChange={setValue}
             items={[
-                {value: '1', title: 'Minsk'},
-                {value: '2', title: 'Moscow'},
-                {value: '3', title: 'Kiev'}
+                {value: '1', title: 'Minsk', country: '', people: 0},
+                {value: '2', title: 'Moscow', country: '', people: 0},
+                {value: '3', title: 'Kiev',country: '', people: 0}
             ]}
         />
     </>
