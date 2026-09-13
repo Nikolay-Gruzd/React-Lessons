@@ -4,6 +4,7 @@ import {Rating, RatingValueType} from "./components/Rating/Rating.tsx";
 import {OnOff} from "./components/onOff/OnOff.tsx";
 import {useState} from "react";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion.tsx";
+import {Clock} from "./components/Clock/Clock.tsx";
 
 export const App = () => {
     console.log('App rendering')
@@ -34,6 +35,8 @@ export const App = () => {
 
             <OnOff switchOn={switchOn} setSwitchOn={setSwitchOn}/>
             {/*<UncontrolledOnOff />*/}
+
+            <Clock />
         </div>
     );
 }
