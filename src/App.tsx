@@ -36,7 +36,8 @@ export const App = () => {
             <OnOff switchOn={switchOn} setSwitchOn={setSwitchOn}/>
             {/*<UncontrolledOnOff />*/}
 
-            <Clock />
+            <Clock mode={'digital'} />
+            <Clock mode={'analog'} />
         </div>
     );
 }
